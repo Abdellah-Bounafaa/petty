@@ -17,10 +17,20 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
     protected $fillable = [
-        'name',
+        'country',
+        'first_name',
+        'last_name',
+        'phone_number',
         'email',
         'password',
+        'bio'
     ];
 
     /**
@@ -41,4 +51,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function donation()
+    {
+        return $this->hasMany(Donation::class, 'user_id', 'id');
+    }
+    public function blog()
+    {
+        return $this->hasMany(Blog::class, 'user_id', 'id');
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
+    public function reply()
+    {
+        return $this->hasMany(CommentReply::class, 'user_id', 'id');
+    }
 }

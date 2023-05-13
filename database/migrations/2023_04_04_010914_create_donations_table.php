@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
-            $table->string('pic_url');
-            $table->string('title');
-            $table->string('description');
+            $table->string('donation_title');
+            $table->text('description');
+            $table->string('type');
+            $table->string('donation_picture');
+            $table->string('status');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

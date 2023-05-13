@@ -4,16 +4,21 @@
 <div class="wrap">
     <x-hero />
 
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');"
+    <div class="hero-wrap js-fullheight" style="background-image: url('images/home.png');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
                 data-scrollax-parent="true">
                 <div class="col-md-11 ftco-animate text-center">
-                    <h1 class="mb-4">Highest Quality Care For Pets You'll Love </h1>
-                    <p><a href="#" class="btn btn-primary mr-md-4 py-3 px-4">Learn more <span
-                                class="ion-ios-arrow-forward"></span></a></p>
+                    <h1 class="mb-4" style="-webkit-text-stroke: 2px #d3bd8c">Highest Quality Care For Pets You'll Love
+                    </h1>
+                    <div class="search-field">
+                        <form action="{{ route('search_donation') }}" method="get">
+                            <input type="text" class="input-search" id="" placeholder="Search...">
+                            <input type="submit" class="search-btn" value="Search">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,49 +26,40 @@
 
     <section class="ftco-section bg-light ftco-no-pt ftco-intro">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
-                    <div class="d-block services active text-center">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="flaticon-blind"></span>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="heading">Dog Walking</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                            <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
                     <div class="d-block services text-center">
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="flaticon-dog-eating"></span>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading">Pet Daycare</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                            <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span
+                            <h3 class="heading">Donations</h3>
+                            <p>Users can make donations to support pets in need by contributing items such as pet food,
+                                pet supplies, medicines, and even pet houses, to help improve the well-being of pets and
+                                support pet owners facing financial challenges.</p>
+                            <a href="{{ route('donations') }}"
+                                class="btn-custom d-flex align-items-center justify-content-center"><span
                                     class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
-                    <div class="d-block services text-center">
+                    <div class="d-block services active text-center">
                         <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="flaticon-grooming"></span>
+                            <span class="flaticon-blind"></span>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading">Pet Grooming</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right.</p>
-                            <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span
+                            <h3 class="heading">Blogs</h3>
+                            <p>Users can access informative and engaging blog posts about various topics related to
+                                pets, including pet care, training, adoption, health, and other relevant pet-related
+                                news and stories and also users could make requests.</p>
+                            <a href="{{ route('blogs') }}"
+                                class="btn-custom d-flex align-items-center justify-content-center"><span
                                     class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -71,46 +67,47 @@
     <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container">
             <div class="row d-flex no-gutters">
-                <div class="col-md-5 d-flex">
+                <div class="col-md-5 d-flex mt-4 mb-4">
                     <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0"
-                        style="background-image:url(images/about-1.jpg);">
+                        style="background-image:url(images/ab1.png); max-width: 100%;">
                     </div>
                 </div>
                 <div class="col-md-7 pl-md-5 py-md-5">
                     <div class="heading-section pt-md-5">
-                        <h2 class="mb-4">Why Choose Us?</h2>
+                        <h2 class="mb-4">Explore the services</h2>
                     </div>
                     <div class="row">
                         <div class="col-md-6 services-2 w-100 d-flex">
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-stethoscope"></span></div>
                             <div class="text pl-3">
-                                <h4>Care Advices</h4>
-                                <p>Far far away, behind the word mountains, far from the countries.</p>
+                                <h4>Free pets</h4>
+                                <p> Find loving homes for pets in need of new families.</p>
                             </div>
                         </div>
                         <div class="col-md-6 services-2 w-100 d-flex">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="flaticon-customer-service"></span></div>
+                            <div class="icon d-flex align-items-center justify-content-center"> <span
+                                    class="flaticon-grooming"></span>
+                            </div>
                             <div class="text pl-3">
-                                <h4>Customer Supports</h4>
-                                <p>Far far away, behind the word mountains, far from the countries.</p>
+                                <h4>Pets Care</h4>
+                                <p>Comprehensive care products for pets.</p>
                             </div>
                         </div>
                         <div class="col-md-6 services-2 w-100 d-flex">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="flaticon-emergency-call"></span></div>
+                            <div class="icon d-flex align-items-center justify-content-center"> <span
+                                    class="flaticon-dog-eating"></span></div>
                             <div class="text pl-3">
-                                <h4>Emergency Services</h4>
-                                <p>Far far away, behind the word mountains, far from the countries.</p>
+                                <h4>Pets Food</h4>
+                                <p>Nutritious meals for pets in need.</p>
                             </div>
                         </div>
                         <div class="col-md-6 services-2 w-100 d-flex">
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-veterinarian"></span></div>
                             <div class="text pl-3">
-                                <h4>Veterinary Help</h4>
-                                <p>Far far away, behind the word mountains, far from the countries.</p>
+                                <h4>Community</h4>
+                                <p>Connect, learn, and share with our pet-loving community.</p>
                             </div>
                         </div>
                     </div>
@@ -166,135 +163,9 @@
         </div>
     </section>
 
-    <section class="ftco-section bg-light ftco-faqs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 order-md-last">
-                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0"
-                        style="background-image:url(images/about.jpg);">
-                        <a href="https://vimeo.com/45830194"
-                            class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
-                            <span class="fa fa-play"></span>
-                        </a>
-                    </div>
-                    <div class="d-flex mt-3">
-                        <div class="img img-2 mr-md-2" style="background-image:url(images/about-2.jpg);"></div>
-                        <div class="img img-2 ml-md-2" style="background-image:url(images/about-3.jpg);"></div>
-                    </div>
-                </div>
 
-                <div class="col-lg-6">
-                    <div class="heading-section mb-5 mt-5 mt-lg-0">
-                        <h2 class="mb-3">Frequently Asks Questions</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there
-                            live the blind texts.</p>
-                    </div>
-                    <div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header p-0" id="headingOne">
-                                <h2 class="mb-0">
-                                    <button href="#collapseOne"
-                                        class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-                                        data-parent="#accordion" data-toggle="collapse" aria-expanded="true"
-                                        aria-controls="collapseOne">
-                                        <p class="mb-0">How to train your pet dog?</p>
-                                        <i class="fa" aria-hidden="true"></i>
-                                    </button>
-                                </h2>
-                            </div>
-                            <div class="collapse show" id="collapseOne" role="tabpanel"
-                                aria-labelledby="headingOne">
-                                <div class="card-body py-3 px-0">
-                                    <ol>
-                                        <li>Far far away, behind the word mountains</li>
-                                        <li>Consonantia, there live the blind texts</li>
-                                        <li>When she reached the first hills of the Italic Mountains</li>
-                                        <li>Bookmarksgrove, the headline of Alphabet Village</li>
-                                        <li>Separated they live in Bookmarksgrove right</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header p-0" id="headingTwo" role="tab">
-                                <h2 class="mb-0">
-                                    <button href="#collapseTwo"
-                                        class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-                                        data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        <p class="mb-0">How to manage your pets?</p>
-                                        <i class="fa" aria-hidden="true"></i>
-                                    </button>
-                                </h2>
-                            </div>
-                            <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-body py-3 px-0">
-                                    <ol>
-                                        <li>Far far away, behind the word mountains</li>
-                                        <li>Consonantia, there live the blind texts</li>
-                                        <li>When she reached the first hills of the Italic Mountains</li>
-                                        <li>Bookmarksgrove, the headline of Alphabet Village</li>
-                                        <li>Separated they live in Bookmarksgrove right</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header p-0" id="headingThree" role="tab">
-                                <h2 class="mb-0">
-                                    <button href="#collapseThree"
-                                        class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-                                        data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        <p class="mb-0">What is the best grooming for your pets?</p>
-                                        <i class="fa" aria-hidden="true"></i>
-                                    </button>
-                                </h2>
-                            </div>
-                            <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-body py-3 px-0">
-                                    <ol>
-                                        <li>Far far away, behind the word mountains</li>
-                                        <li>Consonantia, there live the blind texts</li>
-                                        <li>When she reached the first hills of the Italic Mountains</li>
-                                        <li>Bookmarksgrove, the headline of Alphabet Village</li>
-                                        <li>Separated they live in Bookmarksgrove right</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header p-0" id="headingFour" role="tab">
-                                <h2 class="mb-0">
-                                    <button href="#collapseFour"
-                                        class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-                                        data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
-                                        aria-controls="collapseFour">
-                                        <p class="mb-0">What are those requirements for sitting pets?</p>
-                                        <i class="fa" aria-hidden="true"></i>
-                                    </button>
-                                </h2>
-                            </div>
-                            <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-body py-3 px-0">
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                        right
-                                        at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ftco-section testimony-section" style="background-image: url('images/bg_2.jpg');">
+    <section class="ftco-section testimony-section" style="background-image: url('images/dogs.png');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center pb-5 mb-3">
@@ -400,172 +271,32 @@
             </div>
         </div>
     </section>
-
-    <section class="ftco-section bg-light">
-        <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <h2>Affordable Packages</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 ftco-animate">
-                    <div class="block-7">
-                        <div class="img" style="background-image: url(images/pricing-1.jpg);"></div>
-                        <div class="text-center p-4">
-                            <span class="excerpt d-block">Personal</span>
-                            <span class="price"><sup>$</sup> <span class="number">49</span> <sub>/mos</sub></span>
-
-                            <ul class="pricing-text mb-5">
-                                <li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
-                                <li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
-                                <li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
-                                <li><span class="fa fa-check mr-2"></span>Free Supports</li>
-                            </ul>
-
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <div class="block-7">
-                        <div class="img" style="background-image: url(images/pricing-2.jpg);"></div>
-                        <div class="text-center p-4">
-                            <span class="excerpt d-block">Business</span>
-                            <span class="price"><sup>$</sup> <span class="number">79</span> <sub>/mos</sub></span>
-
-                            <ul class="pricing-text mb-5">
-                                <li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
-                                <li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
-                                <li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
-                                <li><span class="fa fa-check mr-2"></span>Free Supports</li>
-                            </ul>
-
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <div class="block-7">
-                        <div class="img" style="background-image: url(images/pricing-3.jpg);"></div>
-                        <div class="text-center p-4">
-                            <span class="excerpt d-block">Ultimate</span>
-                            <span class="price"><sup>$</sup> <span class="number">109</span> <sub>/mos</sub></span>
-
-                            <ul class="pricing-text mb-5">
-                                <li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
-                                <li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
-                                <li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
-                                <li><span class="fa fa-check mr-2"></span>Free Supports</li>
-                            </ul>
-
-                            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center pb-5 mb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <h2>Pets Gallery</h2>
+                    <h2>Last Donations</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 ftco-animate">
-                    <div class="work mb-4 img d-flex align-items-end"
-                        style="background-image: url(images/gallery-1.jpg);">
-                        <a href="images/gallery-1.jpg"
-                            class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4">
-                            <div class="text w-100 mb-3">
-                                <span>Cat</span>
-                                <h2><a href="work-single.html">Persian Cat</a></h2>
+                @foreach ($donations as $donation)
+                    <div class="col-md-4 ftco-animate">
+                        <div class="work mb-4 img d-flex align-items-end"
+                            style="background-image: url('{{ url('uploads/donations/' . $donation->donation_picture) }}');">
+                            <a href="{{ url('uploads/donations/' . $donation->donation_picture) }}"
+                                class="icon image-popup d-flex justify-content-center align-items-center">
+                                <span class="fa fa-expand"></span>
+                            </a>
+                            <div class="desc w-100 px-4">
+                                <div class="text w-100 mb-3">
+                                    <span class="text-secondary">{{ $donation->type }}</span>
+                                    <h2><a href="{{ route('donation-detail', $donation->id) }}"
+                                            class="text-dark">{{ $donation->donation_title }}</a></h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <div class="work mb-4 img d-flex align-items-end"
-                        style="background-image: url(images/gallery-2.jpg);">
-                        <a href="images/gallery-2.jpg"
-                            class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4">
-                            <div class="text w-100 mb-3">
-                                <span>Dog</span>
-                                <h2><a href="work-single.html">Pomeranian</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <div class="work mb-4 img d-flex align-items-end"
-                        style="background-image: url(images/gallery-3.jpg);">
-                        <a href="images/gallery-3.jpg"
-                            class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4">
-                            <div class="text w-100 mb-3">
-                                <span>Cat</span>
-                                <h2><a href="work-single.html">Sphynx Cat</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 ftco-animate">
-                    <div class="work mb-4 img d-flex align-items-end"
-                        style="background-image: url(images/gallery-4.jpg);">
-                        <a href="images/gallery-4.jpg"
-                            class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4">
-                            <div class="text w-100 mb-3">
-                                <span>Cat</span>
-                                <h2><a href="work-single.html">British Shorthair</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <div class="work mb-4 img d-flex align-items-end"
-                        style="background-image: url(images/gallery-5.jpg);">
-                        <a href="images/gallery-5.jpg"
-                            class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4">
-                            <div class="text w-100 mb-3">
-                                <span>Dog</span>
-                                <h2><a href="work-single.html">Beagle</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <div class="work mb-4 img d-flex align-items-end"
-                        style="background-image: url(images/gallery-6.jpg);">
-                        <a href="images/gallery-6.jpg"
-                            class="icon image-popup d-flex justify-content-center align-items-center">
-                            <span class="fa fa-expand"></span>
-                        </a>
-                        <div class="desc w-100 px-4">
-                            <div class="text w-100 mb-3">
-                                <span>Dog</span>
-                                <h2><a href="work-single.html">Pug</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -578,60 +309,29 @@
                 </div>
             </div>
             <div class="row d-flex">
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20 rounded"
-                            style="background-image: url('images/image_1.jpg');">
-                        </a>
-                        <div class="text p-4">
-                            <div class="meta mb-2">
-                                <div><a href="#">April 07, 2020</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a>
+
+                @foreach ($blogs as $blog)
+                    <div class="col-md-4 col-lg-4 d-flex ftco-animate justify-content-center">
+                        <div class="blog-entry align-self-stretch">
+                            <a href="{{ route('blog-detail', $blog->id) }}" class="block-20 rounded"
+                                style="background-image: url('{{ url('uploads/blogs/' . $blog->blog_picture) }}');">
+                            </a>
+                            <div class="text p-4">
+                                <div class="meta mb-2">
+                                    <div><a
+                                            href="{{ route('blog-detail', $blog->id) }}">{{ date('M d, Y', strtotime($blog->updated_at ? $blog->updated_at : $blog->created_at)) }}</a>
+                                    </div>
+                                    <div><a
+                                            href="{{ route('blog-detail', $blog->id) }}">{{ $blog->user->first_name . ' ' . $blog->user->last_name }}</a>
+                                    </div>
                                 </div>
+                                <h3 class="heading"><a
+                                        href="{{ route('blog-detail', $blog->id) }}">{{ $blog->title }}</a></h3>
                             </div>
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about
-                                    the
-                                    blind texts</a></h3>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20 rounded"
-                            style="background-image: url('images/image_2.jpg');">
-                        </a>
-                        <div class="text p-4">
-                            <div class="meta mb-2">
-                                <div><a href="#">April 07, 2020</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about
-                                    the
-                                    blind texts</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20 rounded"
-                            style="background-image: url('images/image_3.jpg');">
-                        </a>
-                        <div class="text p-4">
-                            <div class="meta mb-2">
-                                <div><a href="#">April 07, 2020</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a>
-                                </div>
-                            </div>
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about
-                                    the
-                                    blind texts</a></h3>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
@@ -642,7 +342,7 @@
         <div class="container">
             <div class="row d-md-flex justify-content-end">
                 <div class="col-md-12 col-lg-6 half p-3 py-5 pl-lg-5 ftco-animate">
-                    <h2 class="mb-4">Free Consultation</h2>
+                    {{-- <h2 class="mb-4">Free Consultation</h2>
                     <form action="#" class="appointment">
                         <div class="row">
                             <div class="col-md-12">
@@ -701,7 +401,8 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
+                    <x-contact-form />
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
                         <div class="login-title">
                             <h2 class="text-center text-primary">Login To Pet sitting</h2>
                         </div>
-                        <form method="POST" action="/users/authenticate">
+                        <form method="POST" action="{{ route('users.authenticate') }}">
                             @csrf
                             <div class="input-group custom">
                                 <input type="text" name="email" id="email-input" value="{{ old('email') }}"

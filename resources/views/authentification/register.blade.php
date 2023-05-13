@@ -34,7 +34,6 @@
                                                     <input type="text" class="form-control" name="last_name"
                                                         id="lastname" placeholder="Last Name"
                                                         value="{{ old('last_name') }}">
-                                                    {{-- <span class="text-12 text-danger" id="lastname-error"></span> --}}
                                                     @error('last_name')
                                                         <span class="text-12 text-danger">{{ $message }}</span>
                                                     @enderror
@@ -56,7 +55,7 @@
                                                 <div class="form-group">
                                                     <label class="label" for="Country">Country</label>
                                                     <input type="text" class="form-control" name="country"
-                                                        id="Country" placeholder="Country"
+                                                        id="Country" placeholder="Country, city"
                                                         value="{{ old('country') }}">
                                                     @error('country')
                                                         <span class="text-12 text-danger">{{ $message }}</span>

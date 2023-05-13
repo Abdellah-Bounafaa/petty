@@ -13,8 +13,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->uuid('user_id')->default('default-uuid-value');;
+            $table->string("first_name", 50);
+            $table->string("last_name", 50);
+            $table->string("country", 50);
+            $table->string('phone_number', 20);
+            $table->string('avatar')->nullable();
+            $table->text('bio')->nullable();
             $table->string('email')->unique();
+            $table->string('user_type')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -27,6 +34,14 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('password_reset_tokens');
+        // Schema::table('users', function (Blueprint $table) {
+        //     // $table->dropColumn('phone_number');
+        //     // $table->dropColumn('country');
+        //     // $table->dropColumn('first_name');
+        //     // $table->dropColumn('last_name');
+        //     // $table->dropColumn('pic_url');
+        //     // $table->dropColumn('bio');
+        // });
     }
 };
