@@ -10,6 +10,8 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\commentReplyController;
+use App\Http\Controllers\ContactFormController;
+
 //////////public routes
 //Home page
 Route::get('/', [HomeController::class, "Home"]);
@@ -120,3 +122,4 @@ Route::controller(OrderController::class)->group(function () {
     Route::get('/requests', 'getMyProductOrders')->name("requests")->middleware("auth");
 });
 // Route::view('/requests', 'requests');
+Route::post('/send-mail', [ContactFormController::class, 'sendMail'])->name('sendMail');
