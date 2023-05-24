@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Donation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,9 +35,9 @@ class DonationController extends Controller
         $donation_object = Donation::find($id);
         // get recents donations
         $recent_donations = Donation::latest('created_at')->limit(3)->where("status", 1)->get();
-
+        $followed_orders = Order::where('user_id', Auth::id())->where('donation_id', $id)->first();
         if ($donation_object && $donation_object->status == "1") {
-            return view('donations.show')->with(["donation_object" => $donation_object, "recent_donations" => $recent_donations]);
+            return view('donations.show')->with(["donation_object" => $donation_object, "recent_donations" => $recent_donations, 'followed_orders' => $followed_orders]);
         } else    if (auth()->user()->user_type == "1" && $donation_object && $donation_object->status == "0") {
             return view('donations.show')->with(["donation_object" => $donation_object, "recent_donations" => $recent_donations]);
         } else {
@@ -51,6 +52,8 @@ class DonationController extends Controller
             'donation_picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'type' => 'required',
             'description' => 'required',
+            'tags' => 'required',
+
         ]);
 
         $path = 'uploads/donations/';
@@ -63,6 +66,7 @@ class DonationController extends Controller
         $donation->donation_picture = $new_image_name;
         $donation->description = $request->description;
         $donation->type = $request->type;
+        $donation->tags = $request->tags;
         $donation->user_id = Auth::id();
         $donation->status = Auth::user()->user_type == '1' ? 1 : 0;
 

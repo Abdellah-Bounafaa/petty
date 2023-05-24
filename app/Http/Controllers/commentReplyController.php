@@ -20,6 +20,13 @@ class commentReplyController extends Controller
         $comment_reply->save();
         return back();
     }
+    public function update(Request $request, $id)
+    {
+        $comment_reply = CommentReply::find($id);
+        $comment_reply->content = $request->content;
+        $comment_reply->save();
+        return back();
+    }
     public function destroy($id)
     {
         $reply = CommentReply::findOrFail($id);

@@ -21,11 +21,8 @@
 
 
 
-                                    {{-- <form action="{{ '/blogs/update-blog/' . $blog->id }}" method="post">
-                                        @csrf --}}
-                                    <p><a href="javascript::void()" class="reply">Update</a>
+                                    <p><a href="javascript::void()" onclick="showUpdate(this)" class="reply">Update</a>
                                     </p>
-                                    {{-- </form> --}}
                                     <form action="{{ route('delete-comment', $comment->id) }}" method="post">
                                         @csrf
                                         @method('delete')
@@ -59,12 +56,9 @@
                                         @if ($comment->reply->count() > 0)
                                             @if (Auth::id() == $reply->user->id)
                                                 <div class="d-flex" style="gap: 5px">
-                                                    <form action="{{ '/blogs/update-blog/' . $reply->id }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        <input style="border: none;" class="reply" type="submit"
-                                                            value="Update">
-                                                    </form>
+                                                    <p><a href="javascript::void()" onclick="showUpdateReply(this)"
+                                                            class="reply">Update</a>
+                                                    </p>
 
 
 
@@ -77,10 +71,20 @@
 
                                                 </div>
                                             @endif
-                                            <p><a href="javascript::void()"onclick="showReply(this, 'submit')"
+                                            <p><a href="javascript::void()"onclick="showReply(this)"
                                                     class="reply">Reply</a>
                                             </p>
                                     </div>
+                                </div>
+                                <div class="update-reply-field" style="display: none;margin-top:10px">
+                                    <form action="{{ route('update-comment-reply', $reply->id) }}" method="post">
+                                        @csrf
+                                        <textarea name="content" class="form-control" id="" cols="30" rows="10" placeholder="...">{{ old('content') }}</textarea>
+                                        <input type="submit" value="Submit" class="btn btn-success mt-2">
+                                        @error('content')
+                                            <p style="font-size: 14px;color:red">{{ $message }}</p>
+                                        @enderror
+                                    </form>
                                 </div>
                         @endif
                 </li>
@@ -98,11 +102,36 @@
             @enderror
         </form>
     </div>
+    <div class="update-field" style="display: none;margin-top:10px">
+        <form action="{{ route('update-comment', $comment->id) }}" method="post">
+            @csrf
+            <textarea name="content" class="form-control" id="" cols="30" rows="10" placeholder="...">{{ old('content') }}</textarea>
+            <input type="submit" value="Submit" class="btn btn-success mt-2">
+            @error('content')
+                <p style="font-size: 14px;color:red">{{ $message }}</p>
+            @enderror
+        </form>
+    </div>
+
     </ul>
     <script>
         function showReply(e) {
+            $('.update-reply-field').hide()
+            $('.update-field').hide();
             $('.reply-field').insertAfter($(e));
             $('.reply-field').show();
+        }
+
+        function showUpdate(e) {
+            $('.reply-field').hide();
+            $('.update-field').insertAfter($(e));
+            $('.update-field').show();
+        }
+
+        function showUpdateReply(e) {
+            $('.reply-field').hide();
+            $('.update-reply-field').insertAfter($(e));
+            $('.update-reply-field').show();
         }
     </script>
     @endif

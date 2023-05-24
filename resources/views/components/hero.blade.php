@@ -56,7 +56,8 @@
                  <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
                  <li class="nav-item"><a href="{{ route('donations') }}" class="nav-link">Donations</a></li>
                  <li class="nav-item"><a href="{{ route('blogs') }}" class="nav-link">Blogs</a></li>
-                 <li class="nav-item"><a href="" class="nav-link">Orders</a></li>
+                 <li class="nav-item"><a href="{{ route('orders') }}" class="nav-link">Orders</a></li>
+                 <li class="nav-item"><a href="{{ route('requests') }}" class="nav-link">Requests</a></li>
                  <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">contact</a></li>
              </ul>
          </div>

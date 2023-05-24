@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('donation_title');
             $table->text('description');
             $table->string('type');
+            $table->text('tags');
             $table->string('donation_picture');
             $table->string('status');
             $table->unsignedBigInteger('user_id');

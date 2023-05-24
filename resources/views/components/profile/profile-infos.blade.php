@@ -26,7 +26,7 @@
                                 <!-- Your form fields here -->
 
                                 <div class="form-group">
-                                    <form action="{{ route('crop') }}" method="post">
+                                    <form action="{{ route('crop') }}" enctype="multipart/form-data" method="post">
                                         @csrf
                                         <label for="profile_pic">Profile Picture:</label>
                                         <input type="file" name="avatar" id="avatar">

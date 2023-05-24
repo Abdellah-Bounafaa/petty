@@ -36,17 +36,20 @@ trait updateProfileTrait
     }
     public function cropImage(Request $request)
     {
+        $request->validate([
+
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg',
+
+
+        ]);
         try {
             $path = 'uploads/avatars/';
             if (!File::exists(public_path($path))) {
                 File::makeDirectory(public_path($path), 0777, true);
             }
             $file = $request->file('avatar');
-            dd($file);
             $new_image_name = 'UIMG' . date('Ymd') . uniqid() . '.jpg';
             $upload = $file->move(public_path($path), $new_image_name);
-            dd($upload);
-
             $user = User::where('id', Auth::id())->first();
             if ($file && $upload) {
                 $user->avatar = $new_image_name;

@@ -11,7 +11,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-7">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
-                                    <h3 class="mb-4">Welcome to Pet Sitting! 👋
+                                    <h3 class="mb-4">Welcome to Petty! 👋
                                         Please sign-up to start the adventure</h3>
                                     <form method="POST" id="registerForm" name="registerForm" action="/users"
                                         class="contactForm">
@@ -55,9 +55,19 @@
                                                 <div class="form-group">
                                                     <label class="label" for="Country">Country</label>
                                                     <input type="text" class="form-control" name="country"
-                                                        id="Country" placeholder="Country, city"
+                                                        id="Country" placeholder="Country"
                                                         value="{{ old('country') }}">
                                                     @error('country')
+                                                        <span class="text-12 text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label" for="Country">City</label>
+                                                    <input type="text" class="form-control" name="city"
+                                                        id="city" placeholder="City" value="{{ old('city') }}">
+                                                    @error('city')
                                                         <span class="text-12 text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
@@ -89,8 +99,8 @@
                                                     <label class="label" for="cpassword">Confirm Password</label>
                                                     <input type="password" class="form-control"
                                                         name="password_confirmation"
-                                                        value="{{ old('password_confirmation') }}" id="cpassword-input"
-                                                        placeholder="Password">
+                                                        value="{{ old('password_confirmation') }}"
+                                                        id="cpassword-input" placeholder="Password">
                                                     @error('password_confirmation')
                                                         <span class="text-12 text-danger">{{ $message }}</span>
                                                     @enderror

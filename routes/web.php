@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\commentReplyController;
-use App\Http\Controllers\DonationController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MembreController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\MembreController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\commentReplyController;
 //////////public routes
 //Home page
 Route::get('/', [HomeController::class, "Home"]);
@@ -109,4 +110,13 @@ Route::controller(CommentController::class)->group(function () {
 });
 
 Route::post('/comments/{id}/add-comment-reply', [commentReplyController::class, 'store'])->name('add-comment-reply')->middleware('auth');
+Route::post('/comments/update_reply/{id}', [commentReplyController::class, 'update'])->name('update-comment-reply')->middleware('auth');
 Route::match(['get', 'head', 'put', 'delete', 'post'], '/comments/replies/single-reply/{id}', [commentReplyController::class, 'destroy'])->name('destroy-comment-reply')->middleware('auth');
+Route::controller(OrderController::class)->group(function () {
+    Route::get('/orders', 'index')->name('orders')->middleware("auth");
+    Route::get('/orders/create/{id}', 'store')->name('add-order')->middleware("auth");
+    Route::delete('/order/{id}', 'destroy')->name('delete-order')->middleware("auth");
+    Route::delete('/delete-orders', 'deleteAllOrders')->name('delete-orders')->middleware("auth");
+    Route::get('/requests', 'getMyProductOrders')->name("requests")->middleware("auth");
+});
+// Route::view('/requests', 'requests');

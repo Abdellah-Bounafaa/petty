@@ -197,6 +197,27 @@
                     </p>
                     <h2 class="mb-3">{{ $donation_object->donation_title }}</h2>
                     <p>{{ $donation_object->description }}</p>
+                    @if ($followed_orders !== null && $followed_orders->count() > 0)
+                        <div class="row">
+                            <div class="col-md-6 col-6 pt-2">
+                                <form action="{{ route('delete-order', $followed_orders->id) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="submit" class="btn btn-outline-primary btn-block " value="Unfollow">
+                                </form>
+                            </div>
+                        </div>
+                    @elseif ($followed_orders == 0)
+                        @if ($donation_object->user_id == auth()->user()->id)
+                            <div class="row">
+                                <div class="col-md-6 col-6 pt-2">
+                                    <a href="{{ route('add-order', $donation_object->id) }}"
+                                        class="btn btn-outline-primary btn-block ">Follow</a>
+                                </div>
+                            </div>
+                        @endif
+                    @endif
+
                 </div>
                 <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
                     <div class="sidebar-box ftco-animate">

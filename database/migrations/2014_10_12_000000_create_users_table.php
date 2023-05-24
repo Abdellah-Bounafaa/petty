@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("first_name", 50);
             $table->string("last_name", 50);
             $table->string("country", 50);
+            $table->string("city", 50);
             $table->string('phone_number', 20);
             $table->string('avatar')->nullable();
             $table->text('bio')->nullable();
@@ -35,13 +36,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('password_reset_tokens');
-        // Schema::table('users', function (Blueprint $table) {
-        //     // $table->dropColumn('phone_number');
-        //     // $table->dropColumn('country');
-        //     // $table->dropColumn('first_name');
-        //     // $table->dropColumn('last_name');
-        //     // $table->dropColumn('pic_url');
-        //     // $table->dropColumn('bio');
-        // });
     }
 };

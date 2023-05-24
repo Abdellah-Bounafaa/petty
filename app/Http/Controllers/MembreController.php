@@ -20,6 +20,7 @@ class MembreController extends Controller
     {
         $FormValidate =  $request->validate([
             'country' => 'required|string',
+            'city' => 'required|string',
             'first_name' => 'required|alpha|max:255',
             'last_name' => 'required|alpha|max:255',
             'phone_number' => 'required|numeric|digits_between:8,15',

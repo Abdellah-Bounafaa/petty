@@ -20,6 +20,7 @@
                      <li><a href="/" class="py-2 d-block">Home</a></li>
                      <li><a href="{{ route('donations') }}" class="py-2 d-block">Donations</a></li>
                      <li><a href="{{ route('blogs') }}" class="py-2 d-block">Blogs</a></li>
+                     <li><a href="{{ route('orders') }}" class="py-2 d-block">Orders</a></li>
                      <li><a href="{{ route('contact') }}" class="py-2 d-block">Contact Us</a></li>
                  </ul>
              </div>

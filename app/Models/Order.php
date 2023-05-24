@@ -5,23 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Donation extends Model
+class Order extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'donation_title',
-        'donation_picture',
-        'type',
-        'description',
-        'user_id', "status"
+        'donation_id',
+        'user_id',
     ];
-
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    public function order()
+    public function donation()
     {
-        return $this->hasMany(Order::class, "donation_id", "id");
+        return $this->belongsTo(Donation::class);
     }
 }

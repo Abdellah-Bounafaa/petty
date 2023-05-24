@@ -15,7 +15,8 @@
                     </h1>
                     <div class="search-field">
                         <form action="{{ route('search_donation') }}" method="get">
-                            <input type="text" class="input-search" id="" placeholder="Search...">
+                            <input type="text" class="input-search" id="" name="donation_title"
+                                placeholder="Search...">
                             <input type="submit" class="search-btn" value="Search">
                         </form>
                     </div>

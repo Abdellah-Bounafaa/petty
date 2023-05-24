@@ -36,6 +36,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
+
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="label" for="pic_url">Picture</label>
@@ -78,6 +79,17 @@
                                                 @error('type')
                                                     <span class="text-12 text-danger">{{ $message }}</span>
                                                 @enderror
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="donation_title">Tags</label>
+                                                    <input type="text" class="form-control" name="tags"
+                                                        id="donation_title" placeholder="Donation Tags"
+                                                        value="{{ old('tags', $donation_object->tags ?? null) }}">
+                                                    @error('tags')
+                                                        <span class="text-12 text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
