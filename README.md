@@ -1,5 +1,4 @@
-# about petty
-## what's petty?
+## What's petty?
 Petty is a platform allows to users to share their own pets,pet's food,tools,....that they don't need anymore
 by making donations and also share their knowledge and ideas by making blogs.
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
